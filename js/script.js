@@ -118,7 +118,8 @@ buttonHeading.onclick = function () {
 
 //Question 6
 //Select the button with the class `title`.
-//When this is button is clicked, update the `title` of the `page` (not the heading, the HTML page title visible in the browser tab) to read: `I've been updated`.
+//When this is button is clicked, update the `title` of the `page`
+//(not the heading, the HTML page title visible in the browser tab) to read: `I've been updated`.
 //Hint: use `console.dir(document)` to view the properties available on the document object.
 
 var buttonChangeTitle = document.querySelector(".title");
@@ -144,7 +145,7 @@ buttonTitle.onclick = changeTitle;
 //Select the buttons with the classes `red`, `orange` and `pink`.
 //Clicking on these buttons should change the background of the page to `red`, `orange` and `pink` respectively.
 
-var redButton = document.querySelector(".red");
+/*var redButton = document.querySelector(".red");
 var orangeButton = document.querySelector(".orange");
 var pinkButton = document.querySelector(".pink");
 var body = document.querySelector("body");
@@ -165,4 +166,28 @@ function pinkBackground() {
     body.style.backgroundColor = "pink";
 }
 
-pinkButton.onclick = pinkBackground;
+pinkButton.onclick = pinkBackground;*/
+
+//or fasit:
+
+// Question 7
+var redButton = document.querySelector(".red");
+var orangeButton = document.querySelector(".orange");
+var pinkButton = document.querySelector(".pink");
+
+// this function will be called by the other functions
+function changeBackground(colour) {
+    document.body.style.backgroundColor = colour;
+}
+
+redButton.onclick = function () {
+    changeBackground("red");
+};
+
+orangeButton.onclick = function () {
+    changeBackground("orange");
+};
+
+pinkButton.onclick = function () {
+    changeBackground("pink");
+};
